@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wochenbericht</title>
+</head>
+
+    <body>
+        <div>
+
+            <div class="app-title">
+                <h1>Wochenberichte</h1>
+            </div>
+
+            <div class="edit-form">
+                
+                
+                <div>
+                    <label for="von">Von</label>
+                    <input type="text" value="" id="von">
+
+                    <label for="bis">Bis</label>
+                    <input type="text" value="" id="bis">
+                </div>
+
+
+                <label for="abteilung">Abteilung</label>
+                <input type="text" value="" id="abteilung">
+
+                <label for="email">E-Mail</label>
+                <input type="text" value="" id="email">
+
+                <label for="email-repeat">E-Mail Wiederholen</label>
+                <input type="text" value="" id="email-repeat">
+                
+
+                <a class="button" href="#">Anmelden</a>
+                <a class="link" href="#">Password vergessen?</a>
+
+            </div>
+        </div>
+    </body>
+
+           
+
+<style>
+    body {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+        height: 100%;
+        width: 100%;
+    }
+
+    .app-title {
+        text-align: center;
+    }
+
+    .edit-form {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+
+    input {
+        font-size: 16px;
+        margin: .3em;
+        border-radius: 5px;
+        border: solid lightgray;
+        height: 1.5em;
+    }
+
+    label {
+        margin: .3em;
+    }
+
+    .button {
+        display: flex;
+        border: solid black;
+        border-radius: 5px;
+        color: white;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+        cursor: pointer;
+        color: white;
+        background-color: rgb(35, 47, 55);
+        margin-left: .3em;
+        margin-right: .3em;
+        height: 2em;
+        margin-top: 1em;
+        margin-bottom: 1em;
+    }
+
+    .link {
+        color: black;
+    }
+
+    select {
+        background-color: white;
+        color: none;
+        border: none;
+    }
+
+    .typeChanger {
+        position: absolute;
+        left: 3vw;
+        top: 3vh;
+        font-size: 1.5em;
+    }
+
+</style>
