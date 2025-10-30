@@ -4,77 +4,63 @@
   <meta charset="UTF-8">
   <title>Wochenberichte</title>
   <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
 
   <header>
+    <input type="checkbox" class="toggler">
+    <div class="hamburger"><div></div></div>
     <h1>Wochenberichte</h1>
-  </header>
-
-  <h2>Ausbildungsnachweis</h2>
-
-  <div class="buttons">
-    <button class="round-button" onclick="neuerEintrag()">Neuer Eintrag</button>
-    <button class="round-button" onclick="herunterladen()">Herunterladen</button>
-  </div>
-<!--
-    <div id="entries">
-        <div class="entry">
-            <strong>Zeitraum</strong>
-            <p>Ausbildungsabschnitt:</p>
-            <p>Betreuer:</p>
-            <p>Status:</p>
-            <p>Aktion:</p>
+    <div class="profile-pic-container">
+        <img src="https://via.placeholder.com/40" alt="Profilbild" class="profile-pic">
+    </div>
+    <div class="menu">
+        <div>
+            <ul>
+                <li><a href='#'>Home</a></li>
+                <li><a href='#'>About</a></li>
+                <li><a href='#'>Services</a></li>
+                <li><a href='#'>Contact</a></li>
+            </ul>
         </div>
     </div>
--->
+  </header>
 
-<div class="blog-card">
-    <div class="single-blog">
-        <strong>Zeitraum:</strong> 01.09.2023 - 07.09.2023
-        <p>Ausbildungsabschnitt: Einführung in das Unternehmen</p>
-        <p>Betreuer: Herr Müller</p>
-        <p>Status: Abgeschlossen</p>
-        <p>Aktion: <button>Bearbeiten</button> <button>Löschen</button></p>
-    </div>
-        <div class="single-blog">
-        <strong>Zeitraum:</strong> 01.09.2023 - 07.09.2023
-        <p>Ausbildungsabschnitt: Einführung in das Unternehmen</p>
-        <p>Betreuer: Herr Müller</p>
-        <p>Status: Abgeschlossen</p>
-        <p>Aktion: <button>Bearbeiten</button> <button>Löschen</button></p>
-    </div>
-        <div class="single-blog">
-        <strong>Zeitraum:</strong> 01.09.2023 - 07.09.2023
-        <p>Ausbildungsabschnitt: Einführung in das Unternehmen</p>
-        <p>Betreuer: Herr Müller</p>
-        <p>Status: Abgeschlossen</p>
-        <p>Aktion: <button>Bearbeiten</button> <button>Löschen</button></p>
-    </div>
-        <div class="single-blog">
-        <strong>Zeitraum:</strong> 01.09.2023 - 07.09.2023
-        <p>Ausbildungsabschnitt: Einführung in das Unternehmen</p>
-        <p>Betreuer: Herr Müller</p>
-        <p>Status: Abgeschlossen</p>
-        <p>Aktion: <button>Bearbeiten</button> <button>Löschen</button></p>
-    </div>
-</div>
+  <main>
+    <h2>Ausbildungsnachweis</h2>
 
-<input type="checkbox" class="toggler">
-<div class="hamburger"><div></div></div>
-<div class="menu">
-    <div>
-        <ul>
-            <li><a href='#'>Home</a></li>
-            <li><a href='#'>About</a></li>
-            <li><a href='#'>Services</a></li>
-            <li><a href='#'>Contact</a></li>
-        </ul>
+    <div class="buttons">
+      <button id="btn-neu" class="round-button">Neuer Eintrag</button>
+      <button id="btn-download" class="round-button">Herunterladen</button>
     </div>
-</div>
 
+    <div id="entries-list">
+        <div class="entry-card">
+            <h3>Zeitraum: 01.09.2023 - 07.09.2023</h3>
+            <p>Ausbildungsabschnitt: Einführung in das Unternehmen</p>
+            <p>Betreuer: Herr Müller</p>
+            <p>Status: Abgeschlossen</p>
+        </div>
+        <div class="entry-card">
+            <h3>Zeitraum: 01.09.2023 - 07.09.2023</h3>
+            <p>Ausbildungsabschnitt: Einführung in das Unternehmen</p>
+            <p>Betreuer: Herr Müller</p>
+            <p>Status: Abgeschlossen</p>
+        </div>
+        <div class="entry-card">
+            <h3>Zeitraum: 01.09.2023 - 07.09.2023</h3>
+            <p>Ausbildungsabschnitt: Einführung in das Unternehmen</p>
+            <p>Betreuer: Herr Müller</p>
+            <p>Status: Abgeschlossen</p>
+        </div>
+    </div>
 
-<!--  <script src="script.js"></script> -->
+    <button class="filter-fab">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-filter"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon></svg>
+    </button>
+  </main>
+
+  <script src="landingpage.js"></script>
 </body>
 </html>
-
