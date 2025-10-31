@@ -13,17 +13,18 @@
                 <h1>Wochenberichte</h1>
             </div>
 
-            <div class="edit-form">
+            <div id="edit-form" class="edit-form">
                 
-                
-                <div>
-                    <label for="von">Von</label>
-                    <input type="text" value="" id="von">
-
-                    <label for="bis">Bis</label>
-                    <input type="text" value="" id="bis">
+                <div class="felx">
+                    <div class="column">
+                        <label for="von">Von</label>
+                        <input type="text" value="" id="von">
+                    </div>
+                    <div class="column">
+                        <label for="bis">Bis</label>
+                        <input type="text" value="" id="bis">
+                    </div>
                 </div>
-
 
                 <label for="abteilung">Abteilung</label>
                 <input type="text" value="" id="abteilung">
@@ -33,14 +34,69 @@
 
                 <label for="email-repeat">E-Mail Wiederholen</label>
                 <input type="text" value="" id="email-repeat">
-                
 
-                <a class="button" href="#">Anmelden</a>
-                <a class="link" href="#">Password vergessen?</a>
+                <div id="tätigkeiten">
+                    <div class="tätigkeitField">
+                        <label>Tätigkeit 1</label>
+                        <select class="dayChanger" name="day" id="day">
+                            <option selected value="monday">Montag</option>
+                            <option value="tuesday">Dienstag</option>
+                            <option value="wednesday">Mittwoch</option>
+                            <option value="thursday">Donerstag</option>
+                            <option value="friday">Freitag</option>
+                        </select>
+                        <textarea></textarea>
+                    </div>
+                </div>
+
+                <a class="addButton button" id="addButton">+</a>
+                <a class="button" href="#">Submit</a>
 
             </div>
         </div>
     </body>
+    <script>
+        let count = 2
+        document.getElementById("addButton").addEventListener("click", function () {
+            const newField = document.createElement('div');
+            newField.className = 'tätigkeitField';
+
+            const label = document.createElement('label');
+            label.textContent = 'Tätigkeit ' + count;
+            newField.appendChild(label);
+
+            const select = document.createElement('select');
+            select.className = 'dayChanger';
+            select.name = 'day';
+            select.id = 'day';
+
+            const options = [
+                { value: 'monday', text: 'Montag', selected: true },
+                { value: 'tuesday', text: 'Dienstag' },
+                { value: 'wednesday', text: 'Mittwoch' },
+                { value: 'thursday', text: 'Donnerstag' },
+                { value: 'friday', text: 'Freitag' }
+            ];
+
+            options.forEach(option => {
+                const opt = document.createElement('option');
+                opt.value = option.value;
+                opt.textContent = option.text;
+                if (option.selected) {
+                    opt.selected = true;
+                }
+                select.appendChild(opt);
+            });
+
+            newField.appendChild(select);
+
+            const textarea = document.createElement('textarea');
+            newField.appendChild(textarea);
+
+            document.getElementById('tätigkeiten').appendChild(newField);
+            count++
+        })
+    </script>
 
            
 
@@ -51,7 +107,6 @@
         justify-content: center;
         align-items: center;
         margin: auto;
-        height: 100%;
         width: 100%;
     }
 
@@ -79,7 +134,7 @@
 
     .button {
         display: flex;
-        border: solid black;
+        border: solid rgb(35, 47, 55);
         border-radius: 5px;
         color: white;
         justify-content: center;
@@ -105,11 +160,40 @@
         border: none;
     }
 
-    .typeChanger {
-        position: absolute;
-        left: 3vw;
-        top: 3vh;
-        font-size: 1.5em;
+    .felx {
+        display: flex;
+    }
+
+    .column {
+        display: flex;
+        flex-direction: column;
+    }
+
+
+    /* TätigkeitField */
+    .tätigkeitField {
+        margin-top: 1em;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+
+    .dayChanger {
+        width: 25%;
+        color: #757575
+    }
+
+    textarea {
+        border-radius: 5px;
+        border: solid lightgray;
+    }
+
+    /*add Button*/
+    .addButton {
+        border-radius: 50%;
+        width: 2em;
+        height: 2em;
+        align-self: flex-end;
     }
 
 </style>
