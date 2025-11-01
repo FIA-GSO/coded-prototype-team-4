@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Berichtsheft-Tool - neuer Ausbildungsnachweis</title>
+    <link type="text/css" rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Berichtsheft-Tool</h1>
+        <nav>
+            <ul>
+                <li>Start</li>
+                <li>Ausbildungsnachweise</li>
+                <li>neuer Ausbildungsnachweis</li>
+                <li>Logout</li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2>neuer Ausbildungsnachweis</h2>
+        <div class="form">
+            <form method="post">
+                <div class="row">
+                    <div class="col-1">
+                        <label for="period-from">Zeitraum von</label><br />
+                        <input type="date" id="period-from" name="period-from" />
+                    </div>
+                    <div class="col-2">
+                        <label for="period-from">bis</label><br />
+                        <input type="date" id="period-to" name="period-to" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-1">
+                        <label for="department" class="">Ausbildungsabteilung</label><br />
+                        <input type="text" id="department" name="department" placeholder="Ausbildungsabteilung" />
+                    </div>
+                    <div class="col-2"></div>
+                </div>
+                <div class="row">
+                    <div class="col-1">
+                        <label for="email-of-supervisor">E-Mail des Betreuers</label><br />
+                        <input type="email" id="email-of-supervisor" name="email-of-supervisor" placeholder="E-Mail des Betreuers" />
+                    </div>
+                    <div class="col-2">
+                        <label for="repeat-email-of-supervisor">E-Mail des Betreuers wiederholen</label><br />
+                        <input type="email" id="repeat-email-of-supervisor" name="repeat-email-of-supervisor" placeholder="E-Mail des Betreuers wiederholen" />
+                    </div>
+                </div>
+                <hr />
+                <div class="activities">
+                    <div class="row">
+                        <div class="col">
+                            <h4>Tätigkeit 1</h4>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-1">
+                            <label for="activity-first-day">Tag</label><br />
+                            <select name="activity-first-select-day" id="activity-first-day">
+                                <option value="Montag">Montag</option>
+                                <option value="Dienstag">Dienstag</option>
+                                <option value="Mittwoch">Mittwoch</option>
+                                <option value="Donnerstag">Donnerstag</option>
+                                <option value="Freitag">Freitag</option>
+                            </select>
+                        </div>
+                        <div class="col-2">
+                            <label for="activity-first-duration">Dauer</label><br />
+                            <select name="activity-first-select-duration" id="activity-first-duration">
+                                <option value="1">1.0h</option>
+                                <option value="2">2.0h</option>
+                                <option value="3">3.0h</option>
+                                <option value="4">4.0h</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <textarea id="activity-first" name="activity-first" rows="5" cols="30" placeholder="Tätigkeit"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        <input type="submit" value="Abschicken" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <a href="#">Startseite</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </main>
+</body>
+</html>
