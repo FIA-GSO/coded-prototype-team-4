@@ -1,31 +1,97 @@
 body {
+    background-color: #f4f7f6;
     font-family: calibri;
 }
+
 header {
     width: 100%;
     text-align: center;
+    background-color: #1a1a1a;
+    color: white;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.5);
 }
+
+header nav {
+    flex: 1;
+    justify-content: start;
+    padding-left: 10px;
+}
+
+header h1 {
+    flex: 3;
+    display: flex;
+    justify-content: center;
+}
+
+header #profile-picture-container {
+    flex: 1;
+    display: flex;
+    justify-content: end;
+    padding-right: 10px;
+}
+
+header #profile-picture {
+    border-radius: 50%;
+}
+
+#menu-icon {
+  font-size: 1.8rem;
+}
+
+#menu-icon {
+    display: block;
+    cursor: pointer;
+}
+
 nav {
     height: 2.25em;
     width: 100%;
     display: flex;
-    justify-content: center;
 }
-li {
+
+nav ul {
+    position: absolute;
+    top: 77px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #181818;
+    width: 95%;
+    padding: 1rem;
+    margin-left: 0;
+    border-radius: 8px;
+    justify-content: center;
+    display: flex;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.5s ease;
+}
+
+nav ul.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+}
+
+nav li {
     list-style: none;
     float: left;
     margin-right: 1.875em;
 }
+
 main {
     width: 100%;
     text-align: center;
 }
-@media screen and (width < 768px) {
+
+@media screen and (max-width: 768px) {
     .col-1, .col-2, .col {
         margin: 25px auto;
     }
 }
-@media screen and (width >= 768px) {
+
+@media screen and (min-width: 768px) {
     .row {
         display: flex;
         width: 80vw;
@@ -44,36 +110,37 @@ main {
         text-align: center;
     }
 }
-@media screen and (width >= 1200px) {
+
+@media screen and (min-width: 1200px) {
     .row {
         width: 50vw;
     }
-    .activities {
-        .row {
-            width: 30vw;
-            margin-top: 0;
-            margin-bottom: 0;
-        }
-        label {
-            width: 150px;
-        }
-        select {
-            width: 150px;
-        }
-        textarea {
-            width: 80%;
-        }
-        .row:has(h4) {
-            margin-top: 0;
-            margin-bottom: 0;
-        }
+    .activities .row {
+        width: 30vw;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+    .activities label {
+        width: 150px;
+    }
+    .activities select {
+        width: 150px;
+    }
+    .activities textarea {
+        width: 80%;
+    }
+    .activities .row:has(h4) {
+        margin-top: 0;
+        margin-bottom: 0;
     }
 }
+
 label {
     width: 270px;
     display: inline-block;
     text-align: left;
 }
+
 input, select, textarea, button {
     background-color: rgb(242, 244, 247);
     border: 1px solid #000000;
@@ -83,26 +150,32 @@ input, select, textarea, button {
     margin-top: 5px;
     margin-left: 10px;
 }
+
 input, select {
     height: 30px;
 }
+
 input[type=submit] {
     background-color: rgb(35, 47, 55);
     color: #FFFFFF;
     height: 40px;
 }
+
 select {
-    background-color: #FFFFFF;
+    background-color: #f4f7f6;
     border: 0px solid black;
 }
+
 hr {
     width: 50vw;
     border-top: 1px;
 }
+
 textarea {
     resize: vertical;
     font-size: 14px;
 }
+
 a {
     color: black;
 }
