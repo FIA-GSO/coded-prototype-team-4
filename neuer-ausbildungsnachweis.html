@@ -55,40 +55,49 @@
                     </div>
                 </div>
                 <hr />
-                <div class="activities">
-                    <div class="row">
-                        <div class="col">
-                            <h4>Tätigkeit 1</h4>
+                <div class="activities" id="activities-container">
+                    <div class="activity" data-activity="1">
+                        <div class="row">
+                            <div class="col">
+                                <h4>Tätigkeit 1</h4>
+                            </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-1">
-                            <label for="activity-first-day">Tag</label><br />
-                            <select name="activity-first-select-day" id="activity-first-day">
-                                <option value="Montag">Montag</option>
-                                <option value="Dienstag">Dienstag</option>
-                                <option value="Mittwoch">Mittwoch</option>
-                                <option value="Donnerstag">Donnerstag</option>
-                                <option value="Freitag">Freitag</option>
-                            </select>
+                        <div class="row">
+                            <div class="col-1">
+                                <label for="activity-day">Tag</label><br />
+                                <select name="activity-select-day" id="activity-day">
+                                    <option value="Montag">Montag</option>
+                                    <option value="Dienstag">Dienstag</option>
+                                    <option value="Mittwoch">Mittwoch</option>
+                                    <option value="Donnerstag">Donnerstag</option>
+                                    <option value="Freitag">Freitag</option>
+                                </select>
+                            </div>
+                            <div class="col-2">
+                                <label for="activity-duration">Dauer</label><br />
+                                <select name="activity-select-duration" id="activity-duration">
+                                    <option value="1">1.0h</option>
+                                    <option value="2">2.0h</option>
+                                    <option value="3">3.0h</option>
+                                    <option value="4">4.0h</option>
+                                </select>
+                            </div>
                         </div>
-                        <div class="col-2">
-                            <label for="activity-first-duration">Dauer</label><br />
-                            <select name="activity-first-select-duration" id="activity-first-duration">
-                                <option value="1">1.0h</option>
-                                <option value="2">2.0h</option>
-                                <option value="3">3.0h</option>
-                                <option value="4">4.0h</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <textarea id="activity-first" name="activity-first" rows="5" cols="30" placeholder="Tätigkeit"></textarea>
+                        <div class="row">
+                            <div class="col">
+                                <textarea id="activity-description" name="activity-description" rows="5" cols="30" placeholder="Tätigkeit"></textarea>
+                            </div>
+                            <div class="col-3">
+                                <img src="images/trash-bin.png" class="trash-bin" alt="Tätigkeit entfernen" width="25" height="25" />
+                            </div>
                         </div>
                     </div>
                 </div>
-
+                <div class="row-add-activity">
+                    <div class="col">
+                        <a class="add-activity" id="add-button-activity">+</a>
+                    </div>
+                </div>
                 <div class="row">
                     <div class="col">
                         <input type="submit" value="Abschicken" />
