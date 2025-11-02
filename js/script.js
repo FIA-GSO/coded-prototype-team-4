@@ -10,6 +10,37 @@ menuIcon.addEventListener('click', () => {
     navList.classList.toggle('show');
 });
 
+const emailOfSupervisorInput = document.getElementById('email-of-supervisor');
+const repeatEmailOfSupervisorInput = document.getElementById('repeat-email-of-supervisor');
+
+function validateEmails() {
+    sanitizedEmailOfSupervisor = emailOfSupervisorInput.value.trim();
+    sanitizedRepeatEmailOfSupervisor = repeatEmailOfSupervisorInput.value.trim();
+
+    if(sanitizedEmailOfSupervisor === '' || sanitizedRepeatEmailOfSupervisor === '') {
+        emailOfSupervisorInput.style.borderColor = '';
+        emailOfSupervisorInput.style.backgroundColor = '';
+        repeatEmailOfSupervisorInput.style.borderColor = '';
+        repeatEmailOfSupervisorInput.style.backgroundColor = '';
+        return;
+    }
+
+    if (sanitizedEmailOfSupervisor === sanitizedRepeatEmailOfSupervisor) {
+        emailOfSupervisorInput.style.borderColor = 'green';
+        emailOfSupervisorInput.style.backgroundColor = '#e8f5e9';
+        repeatEmailOfSupervisorInput.style.borderColor = 'green';
+        repeatEmailOfSupervisorInput.style.backgroundColor = '#e8f5e9';
+    } else {
+        emailOfSupervisorInput.style.borderColor = 'red';
+        emailOfSupervisorInput.style.backgroundColor = '#ffebee';
+        repeatEmailOfSupervisorInput.style.borderColor = 'red';
+        repeatEmailOfSupervisorInput.style.backgroundColor = '#ffebee';
+    }
+}
+
+emailOfSupervisorInput.addEventListener('blur', validateEmails);
+repeatEmailOfSupervisorInput.addEventListener('blur', validateEmails);
+
 const activitiesContainer = document.getElementById('activities-container');
 const addButtonActivity = document.getElementById('add-button-activity');
 
