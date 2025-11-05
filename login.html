@@ -7,34 +7,70 @@
     <title>Wochenbericht</title>
 </head>
 
-    <body>
-        <div>
-            <select class="typeChanger" name="type" id="type">
-                <option selected value="auszubildender">Auszubildender</option>
-                <option value="ausbilder">Ausbilder</option>
-            </select>
+<body>
+    <div>
+        <select class="typeChanger" name="type" id="type">
+            <option selected value="auszubildender">Auszubildender</option>
+            <option value="ausbilder">Ausbilder</option>
+        </select>
 
-            <div class="app-title">
-                <h1>Wochenberichte</h1>
-            </div>
-
-            <div class="login-form">
-
-                <label for="login-email">E-Mail</label>
-                <input type="text" value="" id="login-email">
-
-                <label for="login-pass">Password</label>
-                <input type="password" value="" id="login-pass">
-                
-
-                <a class="button" href="#">Anmelden</a>
-                <a class="link" href="#">Password vergessen?</a>
-
-            </div>
+        <div class="app-title">
+            <h1>Wochenberichte</h1>
         </div>
-    </body>
 
-           
+        <form class="login-form" onsubmit="handleLogin(event)">
+
+            <label for="login-email">E-Mail</label>
+            <input type="text" value="" id="login-email" name="login-email">
+
+            <label for="login-pass">Password</label>
+            <input type="password" value="" id="login-pass" name="login-pass">
+            
+
+            <input type="submit" value="Anmelden">
+            <a class="link" href="#">Password vergessen?</a>
+
+        </form>
+    </div>
+</body>
+
+<script>
+    function handleLogin(e) {
+        e.preventDefault();
+
+        const emailInput = e.target.elements["login-email"];
+        const passwordInput = e.target.elements["login-pass"];
+
+        const email = emailInput.value;
+        const password = passwordInput.value;
+
+        if (email !== "test@test.de") {
+            emailInput.style.borderColor = 'red';
+            emailInput.style.backgroundColor = '#ffebee';
+            triggerColorResetOnChange(emailInput);
+            alert("Please enter a valid email address.");
+        } else if (password !== "password") {
+            passwordInput.style.borderColor = 'red';
+            passwordInput.style.backgroundColor = '#ffebee';
+            triggerColorResetOnChange(passwordInput);
+            alert("Please enter a valid password.");
+        } else {
+            window.location.href = "neuer-ausbildungsnachweis.html";
+        }
+    }
+
+    function triggerColorResetOnChange(element) {
+        element.addEventListener("input", function() {
+            resetColor(element);
+        });
+    }
+
+    function resetColor(element) {
+        element.style.borderColor = '';
+        element.style.backgroundColor = '';
+        element.removeEventListener("input", resetColor);
+    }
+</script>    
 
 <style>
     body {
