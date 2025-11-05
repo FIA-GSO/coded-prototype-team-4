@@ -14,6 +14,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- 3. Funktionen für Haupt-Buttons ---
 
     function createNewEntry() {
+        window.location.href = "../neuer-ausbildungsnachweis.html";
+        return;
+
         const zeitraum = prompt("Gib den Zeitraum ein (z.B. 01.10. - 07.10.2025):");
         const abschnitt = prompt("Gib den Ausbildungsabschnitt ein:");
         const betreuer = prompt("Gib den Betreuer ein:");
