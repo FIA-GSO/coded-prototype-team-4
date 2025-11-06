@@ -21,11 +21,11 @@
         <form class="login-form" onsubmit="handleLogin(event)">
             <label for="login-email">E-Mail</label>
             <input type="text" value="" id="login-email" name="login-email">
-            <p class="errorLabel" id="error-message-login-email" style="display: none">E-Mail ist falsch</p>
+            <label class="errorLabel" id="error-message-login-email" style="display: none">E-Mail ist falsch</label>
 
             <label for="login-pass">Passwort</label>
             <input type="password" value="" id="login-pass" name="login-pass">
-            <p class="errorLabel" id="error-message-login-pass" style="display: none">Passwort ist falsch</p>
+            <label class="errorLabel" id="error-message-login-pass" style="display: none">Passwort ist falsch</label>
 
             <input class="button" type="submit" value="Anmelden">
             <a class="link" href="#">Passwort vergessen?</a>
@@ -152,9 +152,6 @@
 
     .errorLabel {
         color: red;
-        font-size: 1em;
-        margin-top: auto;
-        margin-bottom: auto;
     }
 
 </style>
