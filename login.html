@@ -19,17 +19,16 @@
         </div>
 
         <form class="login-form" onsubmit="handleLogin(event)">
+            <label for="login-email">E-Mail</label>
+            <input type="text" value="" id="login-email" name="login-email">
+            <p class="errorLabel" id="error-message-login-email" style="display: none">E-Mail ist falsch</p>
 
-                <label for="login-email">E-Mail</label>
-                <input type="text" value="" id="login-email" name="login-email">
+            <label for="login-pass">Passwort</label>
+            <input type="password" value="" id="login-pass" name="login-pass">
+            <p class="errorLabel" id="error-message-login-pass" style="display: none">Passwort ist falsch</p>
 
-                <label for="login-pass">Passwort</label>
-                <input type="password" value="" id="login-pass" name="login-pass">
-                
-
-                <input class="button" type="submit" value="Anmelden">
-                <a class="link" href="#">Passwort vergessen?</a>
-
+            <input class="button" type="submit" value="Anmelden">
+            <a class="link" href="#">Passwort vergessen?</a>
         </form>
     </div>
 </body>
@@ -45,30 +44,47 @@
         const password = passwordInput.value;
 
         if (email !== "test@example.com") {
-            emailInput.style.borderColor = 'red';
-            emailInput.style.backgroundColor = '#ffebee';
-            triggerColorResetOnChange(emailInput);
-            alert("Please enter a valid email address.");
+            changeElementToWrongState(emailInput);
+            triggerInputResetOnChange(emailInput);
         } else if (password !== "Password") {
-            passwordInput.style.borderColor = 'red';
-            passwordInput.style.backgroundColor = '#ffebee';
-            triggerColorResetOnChange(passwordInput);
-            alert("Please enter a valid password.");
+            changeElementToWrongState(passwordInput);
+            triggerInputResetOnChange(passwordInput);
         } else {
             window.location.href = "Landingpage/landing.html";
         }
     }
 
-    function triggerColorResetOnChange(element) {
+    function triggerInputResetOnChange(element) {
         element.addEventListener("input", function() {
-            resetColor(element);
+            changeElementToNormalState(element);
         });
     }
 
-    function resetColor(element) {
+    function changeElementToWrongState(element) {
+        element.style.borderColor = 'red';
+        element.style.backgroundColor = '#ffebee';
+
+        label = getLabelElement(element);
+
+        label.style = '';
+    }
+
+    function changeElementToNormalState(element) {
         element.style.borderColor = '';
         element.style.backgroundColor = '';
-        element.removeEventListener("input", resetColor);
+
+        label = getLabelElement(element);
+
+        label.style = 'display: none';
+
+        element.removeEventListener("input", function() {
+            changeElementToNormalState(element);
+        });
+    }
+
+    function getLabelElement(element) {
+        labelId = "error-message-" + element.id;
+        return document.getElementById(labelId);
     }
 </script>    
 
@@ -132,6 +148,13 @@
 
     label {
         margin: .3em;
+    }
+
+    .errorLabel {
+        color: red;
+        font-size: 1em;
+        margin-top: auto;
+        margin-bottom: auto;
     }
 
 </style>
