@@ -23,12 +23,12 @@
                 <label for="login-email">E-Mail</label>
                 <input type="text" value="" id="login-email" name="login-email">
 
-                <label for="login-pass">Password</label>
+                <label for="login-pass">Passwort</label>
                 <input type="password" value="" id="login-pass" name="login-pass">
                 
 
                 <input class="button" type="submit" value="Anmelden">
-                <a class="link" href="#">Password vergessen?</a>
+                <a class="link" href="#">Passwort vergessen?</a>
 
         </form>
     </div>
@@ -44,12 +44,12 @@
         const email = emailInput.value;
         const password = passwordInput.value;
 
-        if (email !== "test@test.de") {
+        if (email !== "test@example.com") {
             emailInput.style.borderColor = 'red';
             emailInput.style.backgroundColor = '#ffebee';
             triggerColorResetOnChange(emailInput);
             alert("Please enter a valid email address.");
-        } else if (password !== "password") {
+        } else if (password !== "Password") {
             passwordInput.style.borderColor = 'red';
             passwordInput.style.backgroundColor = '#ffebee';
             triggerColorResetOnChange(passwordInput);
