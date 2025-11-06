@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
         window.location.href = "../neuer-ausbildungsnachweis.html";
         return;
 
-        const zeitraum = prompt("Gib den Zeitraum ein (z.B. 01.10. - 07.10.2025):");
+/*        const zeitraum = prompt("Gib den Zeitraum ein (z.B. 01.10. - 07.10.2025):");
         const abschnitt = prompt("Gib den Ausbildungsabschnitt ein:");
         const betreuer = prompt("Gib den Betreuer ein:");
 
@@ -38,7 +38,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 <button class="action-btn edit">Bearbeiten</button>
                 <button class="action-btn delete">Löschen</button>
             </div>
-        `;
+        `; 
+        */
 
         entriesContainer.prepend(entryElement);
         addListenersToEntry(entryElement); // Listener für die neuen Buttons hinzufügen
@@ -54,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
         console.log('Hier könnte eine Logik für das Filtern der Einträge stehen.');
     }
 
-    // --- 4. Event Listeners für Aktions-Buttons (Bearbeiten/Löschen) ---
+    /* --- 4. Event Listeners für Aktions-Buttons (Bearbeiten/Löschen) ---
 
     function addListenersToEntry(entry) {
         const editBtn = entry.querySelector('.action-btn.edit');
@@ -69,14 +70,16 @@ document.addEventListener('DOMContentLoaded', () => {
                 entry.remove();
             }
         });
-    }
+    } 
+    */
 
     // Finde ALLE existierenden Einträge auf der Seite (aktualisierte Klasse)
     const allEntries = document.querySelectorAll('.entry-card');
     
-    // ...und füge JEDEM von ihnen die "Bearbeiten"- und "Löschen"-Logik hinzu
+    /* ...und füge JEDEM von ihnen die "Bearbeiten"- und "Löschen"-Logik hinzu
     allEntries.forEach(entry => {
         addListenersToEntry(entry);
-    });
+    }); 
+    */
 
 });
