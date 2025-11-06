@@ -238,8 +238,8 @@ h2 {
 }
 
 .entry-card {
-   background-color: #ffffff; /* WEISSER Hintergrund für Karten */
-   color: #333; /* Dunkle Schriftfarbe auf weißem Hintergrund */
+   background-color: #ffffff; 
+   color: #333; 
    padding: 1.25rem 1.5rem;
    border-radius: 12px;
    box-shadow: 0 4px 15px rgba(0,0,0,0.1); /* Weniger aggressiver Schatten */
@@ -266,42 +266,6 @@ h2 {
     margin-bottom: 1rem;
 }
 
-.card-actions {
-    display: flex;
-    justify-content: flex-end;
-    gap: 0.5rem;
-    margin-top: 1rem;
-    padding-top: 0.75rem;
-    border-top: 1px solid #e0e0e0; /* Helle Trennlinie auf weißem Hintergrund */
-}
-
-.action-btn {
-  padding: 8px 16px;
-  font-size: 0.85rem;
-  font-weight: 600;
-  border-radius: 8px; /* Weniger runde Ecken */
-  cursor: pointer;
-  transition: all 0.2s ease;
-  border: none; /* Keine Border */
-}
-
-.action-btn.edit {
-  background-color: #5cb85c; /* Hellgrün */
-  color: white;
-}
-.action-btn.edit:hover {
-  background-color: #4cae4c;
-  transform: translateY(-1px);
-}
-
-.action-btn.delete {
-  background-color: #d9534f; /* Hellrot */
-  color: white;
-}
-.action-btn.delete:hover {
-  background-color: #c9302c;
-  transform: translateY(-1px);
-}
 
 /* --- Filter Floating Action Button (FAB) --- */
 .filter-fab {
@@ -399,4 +363,52 @@ h2 {
     bottom: 15px;
     right: 15px;
   }
+}
+
+
+/* --- Dropdown bei jeder Karte --- */
+.dropdown {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.dropbtn {
+  background: none;
+  border: none;
+  font-size: 1.3rem;
+  cursor: pointer;
+  color: #555;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  right: 0;
+  background-color: white;
+  min-width: 120px;
+  box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
+  border-radius: 6px;
+  z-index: 10;
+}
+
+.dropdown-content a {
+  color: #333;
+  padding: 8px 12px;
+  text-decoration: none;
+  display: block;
+  font-size: 0.9rem;
+}
+
+.dropdown-content a:hover {
+  background-color: #f0f0f0;
+}
+
+.dropdown.show .dropdown-content {
+  display: block;
+}
+
+.entry-card {
+  position: relative;
+  background-color: #ffffff;
 }
