@@ -141,14 +141,8 @@ main {
         display: grid;
         justify-content: center;
     }
-}
-
-@media screen and (min-width: 1200px) {
-    .row {
-        width: 50vw;
-    }
     .activities .row {
-        width: 30vw;
+        width: 50vw;
         margin-top: 0;
         margin-bottom: 0;
     }
@@ -164,6 +158,36 @@ main {
     .activities .row:has(h4) {
         margin-top: 0;
         margin-bottom: 0;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .row {
+        width: 50vw;
+    }
+    .activities .row {
+        width: 50vw;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+    .activities label {
+        width: 150px;
+    }
+    .activities select {
+        width: 150px;
+    }
+    .activities textarea {
+        width: 80%;
+    }
+    .activities .row:has(h4) {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+}
+
+@media screen and (min-width: 1400px) {
+    .activities .row {
+        width: 30vw;
     }
 }
 
