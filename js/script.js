@@ -10,6 +10,42 @@ menuIcon.addEventListener('click', () => {
     navList.classList.toggle('show');
 });
 
+const periodFromInput = document.getElementById('period-from');
+
+periodFromInput.addEventListener('blur', () => {
+    if(periodFromInput.value === '') {
+        periodFromInput.style.borderColor = 'red';
+        periodFromInput.style.backgroundColor = '#ffebee';
+    } else {
+        periodFromInput.style.borderColor = 'green';
+        periodFromInput.style.backgroundColor = '#e8f5e9';
+    }
+});
+
+const periodToInput = document.getElementById('period-to');
+
+periodToInput.addEventListener('blur', () => {
+    if(periodToInput.value === '') {
+        periodToInput.style.borderColor = 'red';
+        periodToInput.style.backgroundColor = '#ffebee';
+    } else {
+        periodToInput.style.borderColor = 'green';
+        periodToInput.style.backgroundColor = '#e8f5e9';
+    }
+});
+
+const departmentInput = document.getElementById('department');
+
+departmentInput.addEventListener('blur', () => {
+    if(departmentInput.value === '') {
+        departmentInput.style.borderColor = 'red';
+        departmentInput.style.backgroundColor = '#ffebee';
+    } else {
+        departmentInput.style.borderColor = 'green';
+        departmentInput.style.backgroundColor = '#e8f5e9';
+    }
+});
+
 const emailOfSupervisorInput = document.getElementById('email-of-supervisor');
 const repeatEmailOfSupervisorInput = document.getElementById('repeat-email-of-supervisor');
 
@@ -18,10 +54,10 @@ function validateEmails() {
     sanitizedRepeatEmailOfSupervisor = repeatEmailOfSupervisorInput.value.trim();
 
     if(sanitizedEmailOfSupervisor === '' || sanitizedRepeatEmailOfSupervisor === '') {
-        emailOfSupervisorInput.style.borderColor = '';
-        emailOfSupervisorInput.style.backgroundColor = '';
-        repeatEmailOfSupervisorInput.style.borderColor = '';
-        repeatEmailOfSupervisorInput.style.backgroundColor = '';
+        emailOfSupervisorInput.style.borderColor = 'red';
+        emailOfSupervisorInput.style.backgroundColor = '#ffebee';
+        repeatEmailOfSupervisorInput.style.borderColor = 'red';
+        repeatEmailOfSupervisorInput.style.backgroundColor = '#ffebee';
         return;
     }
 
@@ -118,4 +154,62 @@ function updateActivityNumbers() {
         activityHeading.innerHTML = 'Tätigkeit ' + activityNumber;
     });
 }
+
+const trainingCertificateForm = document.getElementById('training-certificate-form');
+const submitButton = document.getElementById('submit-button');
+const emailOfSupervisorHint = document.getElementById('e-mail-of-supervisor-hint');
+const repeatEmailOfSupervisorHint = document.getElementById('repeat-email-of-supervisor-hint');
+
+const periodFromHint = document.getElementById('period-from-hint');
+const periodToHint = document.getElementById('period-to-hint');
+const departmentHint = document.getElementById('department-hint');
+
+submitButton.addEventListener('click', (event) => {
+    event.preventDefault();
+    if(periodFromInput.value === '') {
+        periodFromHint.textContent = 'Bitte geben Sie Zeitraum von an';
+    }
+    if(periodToInput.value === '') {
+        periodToHint.textContent = 'Bitte geben Sie Zeitraum bis an';
+    }
+    if(departmentInput.value === '') {
+        departmentHint.textContent = 'Bitte geben Sie Ausbildungsabteilung an';
+    }
+    if(emailOfSupervisorInput.value === '') {
+        emailOfSupervisorHint.textContent = 'Bitte geben Sie eine E-Mail an';
+    }
+    if(repeatEmailOfSupervisorInput.value === '') {
+        repeatEmailOfSupervisorHint.textContent = 'Bitte geben Sie eine E-Mail an';
+    }
+});
+
+periodFromInput.addEventListener('input', () => {
+    if(periodFromHint.textContent !== '') {
+        periodFromHint.textContent = '';
+    }
+});
+
+periodToInput.addEventListener('input', () => {
+    if(periodToHint.textContent !== '') {
+        periodToHint.textContent = '';
+    }
+});
+
+departmentInput.addEventListener('input', () => {
+    if(departmentHint.textContent !== '') {
+        departmentHint.textContent = '';
+    }
+});
+
+emailOfSupervisorInput.addEventListener('input', () => {
+    if(emailOfSupervisorHint.textContent !== '') {
+        emailOfSupervisorHint.textContent = '';
+    }
+});
+
+repeatEmailOfSupervisorInput.addEventListener('input', () => {
+    if(repeatEmailOfSupervisorHint.textContent !== '') {
+        repeatEmailOfSupervisorHint.textContent = '';
+    }
+});
 

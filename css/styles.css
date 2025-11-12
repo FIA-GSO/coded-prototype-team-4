@@ -105,7 +105,7 @@ main {
     .row {
         display: flex;
         width: 80vw;
-        margin: 25px auto;
+        margin: 20px auto;
     }
     .col-1 {
         flex: 1 50%;
@@ -183,6 +183,19 @@ input[type=submit] {
 select {
     background-color: #f4f7f6;
     border: 0px solid black;
+}
+
+#period-from-hint, #period-to-hint, #department-hint, #e-mail-of-supervisor-hint, #repeat-email-of-supervisor-hint {
+    text-align: left;
+    color: red;
+    height: 15px;
+    width: 270px;
+    display: inline-block;
+}
+
+.col-1 label, .col-1 input, .col-1 div {
+    display: inline-block;
+    width: 250px;
 }
 
 hr {

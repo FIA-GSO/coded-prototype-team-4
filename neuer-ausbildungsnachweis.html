@@ -8,7 +8,7 @@
     <script src="js/script.js" defer></script>
 </head>
 <body>
-  <header>
+    <header>
         <nav>
             <div id="menu-icon">☰</div>
             <ul id="nav-list">
@@ -21,26 +21,29 @@
         <h1>Berichtsheft-Tool</h1>
         <div id="profile-picture-container">
             <img src="https://placehold.co/50/blue/white" id="profile-picture" alt="Profilbild" width="50" height="50">
-    </div>
-  </header>
+        </div>
+    </header>
     <main>
         <h2>neuer Ausbildungsnachweis</h2>
         <div class="form">
-            <form method="post">
+            <form action="#" method="post" id="training-certificate-form">
                 <div class="row">
                     <div class="col-1">
                         <label for="period-from">Zeitraum von</label><br />
                         <input type="date" id="period-from" name="period-from" />
+                        <div id="period-from-hint"></div>
                     </div>
                     <div class="col-2">
-                        <label for="period-from">bis</label><br />
+                        <label for="period-to">bis</label><br />
                         <input type="date" id="period-to" name="period-to" />
+                        <div id="period-to-hint"></div>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-1">
                         <label for="department" class="">Ausbildungsabteilung</label><br />
                         <input type="text" id="department" name="department" placeholder="Ausbildungsabteilung" />
+                        <div id="department-hint"></div>
                     </div>
                     <div class="col-2"></div>
                 </div>
@@ -48,10 +51,12 @@
                     <div class="col-1">
                         <label for="email-of-supervisor">E-Mail des Betreuers</label><br />
                         <input type="email" id="email-of-supervisor" name="email-of-supervisor" placeholder="E-Mail des Betreuers" />
+                        <div id="e-mail-of-supervisor-hint"></div>
                     </div>
                     <div class="col-2">
                         <label for="repeat-email-of-supervisor">E-Mail des Betreuers wiederholen</label><br />
                         <input type="email" id="repeat-email-of-supervisor" name="repeat-email-of-supervisor" placeholder="E-Mail des Betreuers wiederholen" />
+                        <div id="repeat-email-of-supervisor-hint"></div>
                     </div>
                 </div>
                 <hr />
@@ -100,7 +105,7 @@
                 </div>
                 <div class="row">
                     <div class="col">
-                        <input type="submit" value="Abschicken" />
+                        <input id="submit-button" type="submit" value="Abschicken" />
                     </div>
                 </div>
                 <div class="row">
