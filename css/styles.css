@@ -95,9 +95,21 @@ main {
     margin: 10px auto;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
+    .row {
+        display: flex;
+        flex-direction: column;
+    }
     .col-1, .col-2, .col {
+        margin: 5px auto;
+        display: flex;
+        flex-direction: column;
+    }
+    .col-3 {
         margin: 25px auto;
+    }
+    .row-add-activity {
+        margin-bottom: 20px;
     }
 }
 
@@ -193,7 +205,7 @@ select {
     display: inline-block;
 }
 
-.col-1 label, .col-1 input, .col-1 div {
+.col-1 input, .col-1 div {
     display: inline-block;
     width: 250px;
 }
